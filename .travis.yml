@@ -1,0 +1,37 @@
+sudo: false
+
+language: php
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+        - $HOME/protobuf
+
+php:
+    - 7.0
+    - 7.1
+    - hhvm
+    - nightly
+
+matrix:
+    allow_failures:
+        - php: nightly
+
+env:
+    - PROTOBUF_VERSION=2.6.1
+    - PROTOBUF_VERSION=3.0.0
+
+before_install:
+    - bash .travis/install.sh
+
+install:
+    - composer self-update
+    - composer --prefer-source install
+    - export PATH=$PATH:$HOME/protobuf/$PROTOBUF_VERSION/bin/
+
+before_script:
+    - vendor/bin/protobuf --include-descriptors -i . -o tests/ tests/fixtures/DummyMessage.proto
+
+script:
+    - vendor/bin/phpunit -c phpunit.xml
+

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ClearCode.Protobuf.Tests;
+
+message DummyMessage {
+    string Title = 1;
+    string Description = 2;
+    string CreatedAt = 3;
+    string UpdatedAt = 4;
+}
