@@ -30,7 +30,7 @@ install:
     - export PATH=$PATH:$HOME/protobuf/$PROTOBUF_VERSION/bin/
 
 before_script:
-    - vendor/bin/protobuf --include-descriptors -i . -o tests/ tests/fixtures/DummyMessage.proto
+    - vendor/bin/protobuf --include-descriptors -i . -o tests/ tests/ClearCode/Protobuf/Tests/fixtures/DummyMessage.proto
 
 script:
     - vendor/bin/phpunit -c phpunit.xml
