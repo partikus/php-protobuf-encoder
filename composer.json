@@ -1,5 +1,5 @@
 {
-  "name": "clearcode/protobuf-encoder",
+  "name": "partikus/protobuf-encoder",
   "license": "MIT",
   "type": "project",
   "autoload": {
