@@ -1,5 +1,5 @@
 vendor/
 composer.lock
 build/
-tests/fixtures/*.bin
+tests/ClearCode/Protobuf/Tests/fixtures/*.bin
 DummyMessage.php
