@@ -26,7 +26,7 @@ before_install:
 
 install:
     - composer self-update
-    - composer --prefer-source install
+    - composer install -o
     - export PATH=$PATH:$HOME/protobuf/$PROTOBUF_VERSION/bin/
 
 before_script:
